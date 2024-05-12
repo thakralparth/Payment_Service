@@ -53,12 +53,12 @@ public class StripePaymentGateway implements PaymentGateway{
 
 
         //Callback URL
-        Map<String,Object> redirecturl = new HashMap<>();
-        redirecturl.put("url","https://www.google.com/");  // define url where you want to redirect after payment
-
-        Map<String,Object> afterPayment = new HashMap<>();
-        afterPayment.put("type","redirect");  // define type  as redirect
-        afterPayment.put("redirect",redirecturl);
+//        Map<String,Object> redirecturl = new HashMap<>();
+//        redirecturl.put("url","https://www.google.com/");  // define url where you want to redirect after payment
+//
+//        Map<String,Object> afterPayment = new HashMap<>();
+//        afterPayment.put("type","redirect");  // define type  as redirect
+//        afterPayment.put("redirect",redirecturl);
 
         List<Object> lineItems = new ArrayList<>();
         lineItems.add(lineItem1);
@@ -66,7 +66,7 @@ public class StripePaymentGateway implements PaymentGateway{
 
         Map<String, Object> params = new HashMap<>();
         params.put("line_items", lineItems);
-        params.put("after_completion", afterPayment);
+//        params.put("after_completion", afterPayment);
 
 
         PaymentLink paymentLink = PaymentLink.create(params);
